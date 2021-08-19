@@ -1,12 +1,9 @@
 import React from "react";
 import {
-  // View,
-  // Image,
   TouchableOpacity,
-  // ScrollView,
+  TextInput,
   FlatList,
-  Text,
-  // ActivityIndicator,
+  View,
 } from "@hybrid/core-components";
 import { Checkbox } from "@hybrid/checkbox";
 import { primaryColor } from "@hybrid/colors";
@@ -26,36 +23,22 @@ class Project extends React.Component {
   render() {
     const { value } = this.state;
     return (
-      <TouchableOpacity activeOpacity={1} style={{ flex: 1 }}>
-        <Checkbox
-          color={primaryColor}
-          tickColor={"white"}
-          onChangeValue={this.onChangeValue}
-          value={value}
-          shape='circular'
-        />
+      <TouchableOpacity
+        activeOpacity={1}
+        style={{ flex: 1, backgroundColor: "red" }}
+      >
         <FlatList
-          renderItem={({ item, index } = {}) => {
-            return (
-              <TouchableOpacity
-                key={`test-list-${index}`}
-                style={{
-                  margin: 10,
-                  height: 80,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "red",
-                }}
-              >
-                <Text>{item}</Text>
-              </TouchableOpacity>
-            );
-          }}
           data={data}
-          style={{ flex: 1, backgroundColor: "blue" }}
+          renderItem={({ item, index }) => (
+            <View key={`textinput-1=1${index}`} style={{ margin: 20 }}>
+              <TextInput
+                value={value}
+                onChangeText={this.onChangeValue}
+                style={{ backgroundColor: "blue" }}
+              />
+            </View>
+          )}
         />
-        {/* <ActivityIndicator size="large" />
-        <ActivityIndicator /> */}
       </TouchableOpacity>
     );
   }
