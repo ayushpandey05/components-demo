@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  View,
-  Image,
+  // View,
+  // Image,
   TouchableOpacity,
-  ScrollView,
+  // ScrollView,
   FlatList,
   Text,
   ActivityIndicator,
 } from "@hybrid/core-components";
-import { InstaPic, TickIcon, EyeIcon } from "../Images";
+// import { InstaPic, TickIcon, EyeIcon } from "../Images";
 
-const imageUrl = "https://picsum.photos/id/237/200/300";
+// const imageUrl = "https://picsum.photos/id/237/200/300";
 
 let data = [];
 for (let i = 1; i <= 100; i++) {
