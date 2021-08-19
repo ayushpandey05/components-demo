@@ -16,3 +16,22 @@ cd ../
 cd icons
 git pull origin  dev
 
+echo "*********************checkbox***********************"
+cd ../
+cd checkbox
+git pull origin  dev
+
+echo "*********************button***********************"
+cd ../
+cd button
+git pull origin  dev
+
+echo "*********************form***********************"
+cd ../
+cd form
+git pull origin  dev
+
+echo "*********************text-input***********************"
+cd ../
+cd text-input
+git pull origin  dev

@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@hybrid/core-components": "file:src/npms/core-components",
+    "@hybrid/checkbox": "file:src/npms/checkbox",
+    "@hybrid/button": "file:src/npms/button",
+    "@hybrid/form": "file:src/npms/form",
+    "@hybrid/text-input": "file:src/npms/text-input",
     "@hybrid/colors": "file:src/npms/colors",
     "@hybrid/icons": "file:src/npms/icons",
     "@testing-library/jest-dom": "^5.14.1",
