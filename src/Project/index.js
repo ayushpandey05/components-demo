@@ -8,6 +8,7 @@ import {
 } from "@hybrid/core-components";
 import { Checkbox } from "@hybrid/checkbox";
 import { primaryColor } from "@hybrid/colors";
+import { DateInput } from "../npms/date-input/src";
 // import { InstaPic, TickIcon, EyeIcon } from "../Images";
 
 // const imageUrl = "https://picsum.photos/id/237/200/300";
@@ -17,7 +18,7 @@ for (let i = 1; i <= 100; i++) {
   data.push(i);
 }
 class Project extends React.Component {
-  state = { value: true };
+  state = { value: null };
   onChangeValue = (value) => {
     this.setState({ value });
   };
@@ -28,7 +29,9 @@ class Project extends React.Component {
         activeOpacity={1}
         style={{ flex: 1, cursor: "default", backgroundColor: "red" }}
       >
-        <Modal transparent visible={value}>
+        <DateInput onChangeValue={this.onChangeValue} value={value} />
+
+        {/* <Modal transparent visible={value}>
           <TouchableOpacity
             onPress={() => {
               this.setState({ value: !value });
@@ -62,7 +65,7 @@ class Project extends React.Component {
               />
             </View>
           )}
-        />
+        /> */}
       </TouchableOpacity>
     );
   }
