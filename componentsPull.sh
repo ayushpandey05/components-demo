@@ -35,3 +35,13 @@ echo "*********************text-input***********************"
 cd ../
 cd text-input
 git pull origin  dev
+
+echo "*********************date-input***********************"
+cd ../
+cd date-input
+git pull origin  dev
+
+echo "*********************modal-button***********************"
+cd ../
+cd modal-button
+git pull origin  dev

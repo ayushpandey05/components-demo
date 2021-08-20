@@ -44,6 +44,18 @@ cd text-input
 git checkout  dev
 cd ..
 
+git clone https://github.com/ayushpandey05/date-input.git
+cd date-input
+# git config credential.helper store
+git checkout  dev
+cd ..
+
+git clone https://github.com/ayushpandey05/modal-button.git
+cd modal-button
+# git config credential.helper store
+git checkout  dev
+cd ..
+
 
 
 
