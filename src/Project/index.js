@@ -17,7 +17,7 @@ for (let i = 1; i <= 100; i++) {
   data.push(i);
 }
 class Project extends React.Component {
-  state = { value: null };
+  state = { value: true };
   onChangeValue = (value) => {
     this.setState({ value });
   };
@@ -28,7 +28,22 @@ class Project extends React.Component {
         activeOpacity={1}
         style={{ flex: 1, cursor: "default", backgroundColor: "red" }}
       >
-        {/* <Modal transparent></Modal> */}
+        <Modal transparent visible={value}>
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({ value: !value });
+            }}
+            style={{ flex: 1, backgroundColor: "blue" }}
+          />
+        </Modal>
+        <Modal transparent visible={!value}>
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({ value: !value });
+            }}
+            style={{ flex: 1, backgroundColor: "green" }}
+          />
+        </Modal>
         <Checkbox
           value={value}
           tickColor="white"
