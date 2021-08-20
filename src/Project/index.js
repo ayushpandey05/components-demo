@@ -4,6 +4,7 @@ import {
   TextInput,
   FlatList,
   View,
+  Modal,
 } from "@hybrid/core-components";
 import { Checkbox } from "@hybrid/checkbox";
 import { primaryColor } from "@hybrid/colors";
@@ -27,6 +28,7 @@ class Project extends React.Component {
         activeOpacity={1}
         style={{ flex: 1, cursor: "default", backgroundColor: "red" }}
       >
+        {/* <Modal transparent></Modal> */}
         <Checkbox
           value={value}
           tickColor="white"
