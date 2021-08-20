@@ -25,8 +25,15 @@ class Project extends React.Component {
     return (
       <TouchableOpacity
         activeOpacity={1}
-        style={{ flex: 1, backgroundColor: "red" }}
+        style={{ flex: 1, cursor: "default", backgroundColor: "red" }}
       >
+        <Checkbox
+          value={value}
+          tickColor="white"
+          style={{ margin: 5 }}
+          color={primaryColor}
+          onChangeValue={this.onChangeValue}
+        />
         <FlatList
           data={data}
           renderItem={({ item, index }) => (
