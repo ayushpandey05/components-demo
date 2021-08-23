@@ -56,6 +56,18 @@ cd modal-button
 git checkout  dev
 cd ..
 
+git clone https://github.com/ayushpandey05/stack-navigator.git
+cd stack-navigator
+# git config credential.helper store
+git checkout  dev
+cd ..
+
+git clone https://github.com/ayushpandey05/tab-navigator.git
+cd tab-navigator
+# git config credential.helper store
+git checkout  dev
+cd ..
+
 
 
 

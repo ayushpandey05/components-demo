@@ -45,3 +45,13 @@ echo "*********************modal-button***********************"
 cd ../
 cd modal-button
 git pull origin  dev
+
+echo "*********************stack-navigator***********************"
+cd ../
+cd stack-navigator
+git pull origin  dev
+
+echo "*********************tab-navigator***********************"
+cd ../
+cd tab-navigator
+git pull origin  dev
