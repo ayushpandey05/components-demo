@@ -68,6 +68,12 @@ cd tab-navigator
 git checkout  dev
 cd ..
 
+git clone https://github.com/ayushpandey05/utility-functions.git
+cd utility-functions
+# git config credential.helper store
+git checkout  dev
+cd ..
+
 
 
 

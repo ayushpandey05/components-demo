@@ -55,3 +55,8 @@ echo "*********************tab-navigator***********************"
 cd ../
 cd tab-navigator
 git pull origin  dev
+
+echo "*********************utility-functions***********************"
+cd ../
+cd utility-functions
+git pull origin  dev
