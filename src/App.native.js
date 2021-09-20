@@ -116,7 +116,7 @@
 // export default App;
 
 import React from "react";
-import { View } from "@hybrid/core-components";
+import { View } from "@react-easy-ui/core-components";
 import { Project } from "./Project";
 const App = () => {
   return (

@@ -10,13 +10,14 @@ import {
   Text,
   ActivityIndicator,
   Image,
-} from "@hybrid/core-components";
-import { StackNavigator } from "@hybrid/stack-navigator";
-import { TabNavigator } from "@hybrid/tab-navigator";
-import { Checkbox } from "@hybrid/checkbox";
-import { primaryColor } from "@hybrid/colors";
+} from "@react-easy-ui/core-components";
+import { StackNavigator } from "@react-easy-ui/stack-navigator";
+import { TabNavigator } from "@react-easy-ui/tab-navigator";
+import { Checkbox } from "@react-easy-ui/checkbox";
+import { primaryColor } from "@react-easy-ui/colors";
 import { DateInput } from "../npms/date-input/src";
 import { ExpandIcon, ShrinkIcon } from "../Images/svg";
+import Home from "./Home";
 // import { InstaPic, TickIcon, EyeIcon } from "../Images";
 
 // const imageUrl = "https://picsum.photos/id/237/200/300";
@@ -111,10 +112,41 @@ const TestTabNavigator = TabNavigator({
   tabs: {
     test: {
       label: "Test",
-      screen: ({ navigation: { push } = {} } = {}) => {
+      screen: ({
+        navigation: { push, getTabState, setTabState } = {},
+      } = {}) => {
+        const screenState = getTabState && getTabState();
         return (
           <View style={{ flex: 1 }}>
-            <ScrollView>
+            <TouchableOpacity
+              style={{
+                height: 100,
+                justifyContent: "center",
+                alignItems: "center",
+                margin: 20,
+                backgroundColor: "green",
+              }}
+              onPress={() => {
+                push && push({ view: "testing", params: { item: "dadsa" } });
+              }}
+            >
+              <Text>{"Push"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setTabState && setTabState({ name: "Test" });
+                // push &&
+                //   push({
+                //     view: "testing",
+                //     params: {
+                //       activeTab: "demo",
+                //     },
+                //   });
+              }}
+            >
+              <Text>{screenState?.name || "Empty"}</Text>
+            </TouchableOpacity>
+            {/* <ScrollView>
               {testData.map((item) => {
                 return (
                   <TouchableOpacity
@@ -133,7 +165,7 @@ const TestTabNavigator = TabNavigator({
                   </TouchableOpacity>
                 );
               })}
-            </ScrollView>
+            </ScrollView> */}
             {/* <TouchableOpacity
               onPress={() => {
                 push &&
@@ -153,10 +185,24 @@ const TestTabNavigator = TabNavigator({
     },
     demo: {
       label: "Demo",
-      screen: () => {
+      screen: ({ navigation: { getTabState, setTabState } = {} } = {}) => {
+        const screenState = getTabState && getTabState();
         return (
           <View style={{ flex: 1 }}>
-            <Text>demo</Text>
+            <TouchableOpacity
+              onPress={() => {
+                setTabState && setTabState({ name: "Demo" });
+                // push &&
+                //   push({
+                //     view: "testing",
+                //     params: {
+                //       activeTab: "demo",
+                //     },
+                //   });
+              }}
+            >
+              <Text>{screenState?.name || "Empty"}</Text>
+            </TouchableOpacity>
           </View>
         );
       },
@@ -198,42 +244,7 @@ const TestTabNavigator2 = TabNavigator({
 
 const MyNavigation = StackNavigator({
   home: {
-    screen: (props) => {
-      const { navigation } = props || {};
-      return (
-        <View
-          style={{
-            // height: 300,
-            // width: 200,
-            flex: 1,
-            backgroundColor: "red",
-            flexDirection: "row",
-          }}
-        >
-          {/* <ActivityIndicator
-            size="large"
-            style={{ transform: [{ scale: 2 }] }}
-          /> */}
-          <TouchableOpacity
-            onPress={() => {
-              navigation?.push &&
-                navigation.push({
-                  view: "profile",
-                  params: {
-                    activeTab: "demo",
-                    name: "Ankit Patidar",
-                    object: {
-                      b: [1, 2, 3],
-                    },
-                  },
-                });
-            }}
-          >
-            <Text>{"Go to profile"}</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    },
+    screen: Home,
   },
   profile: {
     screen: TestTabNavigator,
